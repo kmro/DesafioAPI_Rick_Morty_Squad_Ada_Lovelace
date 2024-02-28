@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data  de Lançamento</th>
+                <th scope="col">Episódios</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for episode in episodes %}
+              <tr>
+                  <td>{{episode.Código}}</td>
+                  <td>{{episode.Nome}}</td>
+                  <td>{{episode.Data}}</td>
+                  <td><a href="{{ url_for('get_single_episode', id=episode.Código) }}"class="btn btn-primary">Ver episodio</a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}

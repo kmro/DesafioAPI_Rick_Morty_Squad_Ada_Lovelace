@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Dimensão</th>
+                <th scope="col">Personagens</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{location.name}}</td>
+                <td>{{location.type}}</td>
+                <td>{{location.dimension}}</td>
+                
+                <td>{{location.residents}}</td>
+            </tr>
+        </tbody>
+      </table>
+{% endblock %}

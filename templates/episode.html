@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Data  de Lançamento</th>
+                <th scope="col">Personagens</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{episode.id}}</td>
+                <td>{{episode.name}}</td>
+                <td>{{episode.air_date}}</td>
+                <td>{{episode.characters}}</td>
+            </tr>
+        </tbody>
+      </table>
+{% endblock %}
