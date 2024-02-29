@@ -1,19 +1,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<h4 class="text-dark py-4">Personagens</h4>
+
 <div class="row">
     {% for character in characters %}
-      <div class="col-sm-3 col-6">
+    <div class="col-sm-3 col-6">
+      <div class="card text-center mb-4">
+        <img src="{{character.image}}" alt="character.name" class="img-fluid card-img-top" />
 
-          <img src="{{character.image}}" alt="character.name"
-          class="img-fluid img-thumbnail" />
-
-          <h3 class="h5">{{character.name}}</h3>
-          <p>
-            <a href="/profile/{{character.id}}" class="btn btn-primary">Ver Perfil</a>
-          </p>
-
+        <div class="card-body">
+          <h5 class="card-title">{{character.name}}</h5>
+          <a href="/profile/{{character.id}}" class="btn text-light" style="background-color: #97ce4c;">Ver Perfil</a>
+        </div>
       </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}
