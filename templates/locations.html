@@ -1,24 +1,30 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Dimensão</th>
-                <th scope="col">perfil da localização</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for location in locations %}
-              <tr>
-                  <td>{{location.Nome}}</td>
-                  <td>{{location.Tipo}}</td>
-                  <td>{{location.Dimensão}}</td>
-                  <td><a href="{{ url_for('get_single_location', id=location.codigo) }}"class="btn btn-primary">Ver localização</a></td>
-              </tr>
-            {% endfor %}
-        </tbody>
-      </table>
+    <h4 class="text-dark py-4">Localizações</h4>
+
+    <div class="card mb-5">
+        <div class="card-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Dimensão</th>
+                        <th scope="col">Localizações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for location in locations %}
+                    <tr>
+                        <td>{{location.Nome}}</td>
+                        <td>{{location.Tipo}}</td>
+                        <td>{{location.Dimensão}}</td>
+                        <td><a href="{{ url_for('get_single_location', id=location.codigo) }}"class="btn btn-link">Ver localização</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
