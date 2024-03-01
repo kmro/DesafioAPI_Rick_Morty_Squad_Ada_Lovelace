@@ -14,7 +14,8 @@
                         <th scope="col">Espécie</th>
                         <th scope="col">Gênero</th>
                         <th scope="col">Origem </th>
-                        <th scope="col">localização</th>
+                        <th scope="col">Localização</th>
+                        <th cope="col">Episódios</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +34,10 @@
                             {% set id = profile.location.url.split("location/")[1] %}
                             <a href="{{ url_for('get_single_location', id=id) }}" class="btn btn-link">{{ profile.location.name }}</a>
                         </td>
+
+                        {% with episodes=profile.episode %}
+                            {% include "episodes-buttons.html" %}
+                        {% endwith %}
                     </tr>
                 </tbody>
             </table>
