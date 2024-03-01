@@ -1,0 +1,13 @@
+{% block content %}
+  <td class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Episódios
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        {% for episode in episodes %}
+            {% set id = episode.split("episode/")[1] %}
+            <a href="{{ url_for('get_single_episode', id=id) }}" class="dropdown-item">{{ name(id) }}</a>
+        {% endfor %}
+    </div>
+  </td>
+{% endblock %}

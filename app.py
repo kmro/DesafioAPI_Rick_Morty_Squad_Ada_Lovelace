@@ -23,11 +23,19 @@ def get_profile(id):
     data = response.read()
     dict = json.loads(data)
 
-    return render_template("profile.html", profile=dict)
+    return render_template("profile.html", profile=dict, name=get_episode_name)
 
 
 def get_character_name(id):
     url = "https://rickandmortyapi.com/api/character/" + id
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    return dict["name"]
+
+
+def get_episode_name(id):
+    url = "https://rickandmortyapi.com/api/episode/" + id
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
